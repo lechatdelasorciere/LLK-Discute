@@ -1,0 +1,33 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Site</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .chat-container { max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; }
+        .messages { list-style-type: none; padding: 0; }
+        .message { padding: 10px; border-bottom: 1px solid #eee; }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <h2>Discussion</h2>
+        <ul class="messages" id="messages"></ul>
+        <input type="text" id="messageInput" placeholder="Enter your message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script>
+        function sendMessage() {
+            const input = document.getElementById('messageInput');
+            const messages = document.getElementById('messages');
+            const message = document.createElement('li');
+            message.className = 'message';
+            message.textContent = input.value;
+            messages.appendChild(message);
+            input.value = '';
+        }
+    </script>
+</body>
+</html>
